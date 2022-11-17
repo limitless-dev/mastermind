@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="95.249" height="95.249" viewBox="0 0 95.249 95.249">
+  <g id="Group_105" data-name="Group 105" transform="translate(-598.75 -911.028)">
+    <g id="Group_102" data-name="Group 102">
+      <rect id="Rectangle_238" data-name="Rectangle 238" width="9.525" height="9.525" transform="translate(627.325 930.077)" fill="#ffdb80"/>
+      <path id="Path_195" data-name="Path 195" d="M617.8,949.127v19.05h9.525V939.6H617.8Z" fill="#ffdb80"/>
+    </g>
+    <path id="Path_196" data-name="Path 196" d="M674.949,930.077v-9.525H617.8v9.525h-9.525V977.7H617.8v9.525h9.525v9.524h38.1v-9.524h9.525v-19.05h9.525v-38.1ZM617.8,958.652V939.6h9.525v-9.525h9.525V939.6h-9.525v28.575H617.8Z" fill="#ffc942"/>
+    <g id="Group_103" data-name="Group 103">
+      <path id="Path_197" data-name="Path 197" d="M674.949,968.177v19.05h9.525v-19.05Z" fill="#ffb342"/>
+      <rect id="Rectangle_239" data-name="Rectangle 239" width="9.525" height="9.525" transform="translate(608.275 977.702)" fill="#ffb342"/>
+      <rect id="Rectangle_240" data-name="Rectangle 240" width="9.525" height="9.525" transform="translate(617.8 987.227)" fill="#ffb342"/>
+      <rect id="Rectangle_241" data-name="Rectangle 241" width="9.525" height="9.525" transform="translate(665.424 987.227)" fill="#ffb342"/>
+    </g>
+    <g id="Group_104" data-name="Group 104">
+      <path id="Path_198" data-name="Path 198" d="M636.85,920.552h38.1v-9.525H617.8v9.525h19.05Z" fill="#0e3059"/>
+      <rect id="Rectangle_242" data-name="Rectangle 242" width="9.525" height="9.525" transform="translate(608.275 920.552)" fill="#0e3059"/>
+      <rect id="Rectangle_243" data-name="Rectangle 243" width="9.525" height="9.525" transform="translate(674.949 920.552)" fill="#0e3059"/>
+      <path id="Path_199" data-name="Path 199" d="M684.474,930.077v57.149H694V930.077Z" fill="#0e3059"/>
+      <path id="Path_200" data-name="Path 200" d="M608.275,968.177v-38.1H598.75v57.149h9.525v-19.05Z" fill="#0e3059"/>
+      <rect id="Rectangle_244" data-name="Rectangle 244" width="9.525" height="9.525" transform="translate(608.275 987.227)" fill="#0e3059"/>
+      <rect id="Rectangle_245" data-name="Rectangle 245" width="9.525" height="9.525" transform="translate(674.949 987.227)" fill="#0e3059"/>
+      <path id="Path_201" data-name="Path 201" d="M655.9,996.751H617.8v9.525h57.149v-9.525H655.9Z" fill="#0e3059"/>
+    </g>
+  </g>
+</svg>

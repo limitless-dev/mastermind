@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="576.227" height="134.793" viewBox="0 0 576.227 134.793">
+  <g id="Group_302" data-name="Group 302" transform="translate(-672.539 -97.245)">
+    <path id="Path_405" data-name="Path 405" d="M688.409,105.18v7.935h-7.935V216.168h7.935V224.1H1232.9v-7.935h7.935V113.115H1232.9V105.18Z" fill="#2b2b2b"/>
+    <g id="Group_301" data-name="Group 301">
+      <g id="Group_297" data-name="Group 297">
+        <rect id="Rectangle_719" data-name="Rectangle 719" width="7.935" height="7.935" transform="translate(688.409 232.038) rotate(-90)" fill="#150c4c"/>
+        <rect id="Rectangle_720" data-name="Rectangle 720" width="7.935" height="7.935" transform="translate(680.474 224.103) rotate(-90)" fill="#150c4c"/>
+        <rect id="Rectangle_721" data-name="Rectangle 721" width="7.935" height="7.935" transform="translate(672.539 216.168) rotate(-90)" fill="#150c4c"/>
+      </g>
+      <g id="Group_298" data-name="Group 298">
+        <rect id="Rectangle_722" data-name="Rectangle 722" width="7.935" height="7.935" transform="translate(696.344 97.245) rotate(90)" fill="#150c4c"/>
+        <rect id="Rectangle_723" data-name="Rectangle 723" width="7.935" height="7.935" transform="translate(688.409 105.18) rotate(90)" fill="#150c4c"/>
+        <rect id="Rectangle_724" data-name="Rectangle 724" width="7.935" height="7.935" transform="translate(680.474 113.115) rotate(90)" fill="#150c4c"/>
+      </g>
+      <rect id="Rectangle_725" data-name="Rectangle 725" width="103.053" height="7.935" transform="translate(672.539 216.168) rotate(-90)" fill="#150c4c"/>
+      <g id="Group_299" data-name="Group 299">
+        <rect id="Rectangle_726" data-name="Rectangle 726" width="7.935" height="7.935" transform="translate(1232.896 97.245) rotate(90)" fill="#150c4c"/>
+        <rect id="Rectangle_727" data-name="Rectangle 727" width="7.935" height="7.935" transform="translate(1240.831 105.18) rotate(90)" fill="#150c4c"/>
+        <rect id="Rectangle_728" data-name="Rectangle 728" width="7.935" height="7.935" transform="translate(1248.766 113.115) rotate(90)" fill="#150c4c"/>
+      </g>
+      <g id="Group_300" data-name="Group 300">
+        <rect id="Rectangle_729" data-name="Rectangle 729" width="7.935" height="7.935" transform="translate(1224.961 232.038) rotate(-90)" fill="#150c4c"/>
+        <rect id="Rectangle_730" data-name="Rectangle 730" width="7.935" height="7.935" transform="translate(1232.896 224.103) rotate(-90)" fill="#150c4c"/>
+        <rect id="Rectangle_731" data-name="Rectangle 731" width="7.935" height="7.935" transform="translate(1240.831 216.168) rotate(-90)" fill="#150c4c"/>
+      </g>
+      <rect id="Rectangle_732" data-name="Rectangle 732" width="103.053" height="7.935" transform="translate(1248.766 113.115) rotate(90)" fill="#150c4c"/>
+      <rect id="Rectangle_733" data-name="Rectangle 733" width="544.486" height="7.935" transform="translate(1232.896 105.18) rotate(180)" fill="#150c4c"/>
+      <rect id="Rectangle_734" data-name="Rectangle 734" width="544.486" height="7.935" transform="translate(1232.896 232.038) rotate(-180)" fill="#150c4c"/>
+    </g>
+  </g>
+  <rect id="Rectangle_735" data-name="Rectangle 735" width="7.935" height="103.053" transform="translate(560.357 15.87)" fill="#494949"/>
+  <rect id="Rectangle_736" data-name="Rectangle 736" width="7.935" height="7.935" transform="translate(552.422 7.935)" fill="#494949"/>
+  <g id="Group_303" data-name="Group 303" transform="translate(-672.539 -97.245)">
+    <rect id="Rectangle_737" data-name="Rectangle 737" width="7.935" height="103.053" transform="translate(688.409 216.168) rotate(-180)" fill="#494949"/>
+    <rect id="Rectangle_738" data-name="Rectangle 738" width="7.935" height="7.935" transform="translate(696.344 113.115) rotate(-180)" fill="#494949"/>
+  </g>
+</svg>

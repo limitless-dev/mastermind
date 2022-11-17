@@ -1,0 +1,85 @@
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 60% 20%;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    'gameTagArea'
+    'boardArea'
+    'colorsListArea';
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+}
+
+.colorsListArea {
+  grid-area: colorsListArea;
+  /* width: 100%; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 100%;
+  gap: 0px 0px;
+  grid-auto-flow: column dense;
+  grid-template-areas: "PlayerInfo PossibleColors"; */
+}
+.boardArea {
+  grid-area: boardArea;
+}
+.gameTagArea {
+  grid-area: gameTagArea;
+}
+
+.PlayerInfo {
+  grid-area: PlayerInfo;
+}
+
+.PossibleColors {
+  grid-area: PossibleColors;
+}
+
+.popout{
+  animation: popout 0.3s linear;
+  opacity: 0;
+  animation-fill-mode: forwards;  
+
+}
+.hints > .bg-coin-border-Img:nth-child(1) > .popout {
+  animation-delay: 0s;
+}
+.hints > .bg-coin-border-Img:nth-child(2) > .popout {
+  animation-delay: 0.3s;
+}
+.hints > .bg-coin-border-Img:nth-child(3) > .popout {
+  animation-delay: 0.6s;
+}
+
+.hints > .bg-coin-border-Img:nth-child(4) > .popout {
+  animation-delay: 0.9s;
+}
+
+.animationNone{
+  animation: none !important;
+}
+@keyframes popout {
+  from {
+    opacity: 1;
+    transform: translate3d(50px, -150px, -330px) rotate(-360deg) scale(0.5);
+  }
+  80% {
+    opacity: 1;
+    transform:  scale(1.5) ;
+    
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg) scale(1) ;
+  }
+}

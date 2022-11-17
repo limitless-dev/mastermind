@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "upheavtt";
+  src: url("./assets/Fonts/upheavtt.ttf");
+}
+
+@font-face {
+  font-family: "hanson";
+  src: url("./assets/Fonts/Hanson-Bold.otf");
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+body {
+  /* width: 100%; */
+  display: table-cell;
+  background-image: url("../src/assets/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+  background-position: center;
+
+  /* height: 0; */
+  /* padding-top: 66, 64%; */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body > #root > div,
+body > #root {
+  height: 100% !important;
+}
+
+.retroTextEN {
+  font-family: "upheavtt";
+}
+
+.retroHintsModalEN {
+  font-family: "hanson";
+}
+
+.ChannelTextEffect {
+  /* color: #fff; */
+  animation: blinkChannelText 0.5s infinite;
+}
+@keyframes blinkChannelText {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #707070;
+  }
+}
+
+.GameTextEffect {
+  animation: blinkGameText 0.5s infinite;
+}
+@keyframes blinkGameText {
+  0% {
+    color: #707070;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}

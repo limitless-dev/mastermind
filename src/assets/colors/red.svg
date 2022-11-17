@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="95.249" height="95.249" viewBox="0 0 95.249 95.249">
+  <g id="Group_117" data-name="Group 117" transform="translate(-849.866 -911.028)">
+    <g id="Group_113" data-name="Group 113">
+      <g id="Group_112" data-name="Group 112">
+        <rect id="Rectangle_254" data-name="Rectangle 254" width="9.525" height="9.525" transform="translate(878.441 930.077)" fill="#ff7d8a"/>
+        <path id="Path_209" data-name="Path 209" d="M868.916,949.127v19.05h9.525V939.6h-9.525Z" fill="#ff7d8a"/>
+      </g>
+    </g>
+    <path id="Path_210" data-name="Path 210" d="M926.065,930.077v-9.525H868.916v9.525h-9.525V977.7h9.525v9.525h9.525v9.524h38.1v-9.524h9.525v-19.05h9.525v-38.1Zm-57.149,28.575V939.6h9.525v-9.525h9.525V939.6h-9.525v28.575h-9.525Z" fill="#cf010b"/>
+    <g id="Group_115" data-name="Group 115">
+      <g id="Group_114" data-name="Group 114">
+        <path id="Path_211" data-name="Path 211" d="M926.065,968.177v19.05h9.525v-19.05Z" fill="#750e18"/>
+        <rect id="Rectangle_255" data-name="Rectangle 255" width="9.525" height="9.525" transform="translate(859.391 977.702)" fill="#750e18"/>
+        <rect id="Rectangle_256" data-name="Rectangle 256" width="9.525" height="9.525" transform="translate(868.916 987.227)" fill="#750e18"/>
+        <rect id="Rectangle_257" data-name="Rectangle 257" width="9.525" height="9.525" transform="translate(916.54 987.227)" fill="#750e18"/>
+      </g>
+    </g>
+    <g id="Group_116" data-name="Group 116">
+      <path id="Path_212" data-name="Path 212" d="M887.966,920.552h38.1v-9.525H868.916v9.525h19.05Z" fill="#0e3059"/>
+      <rect id="Rectangle_258" data-name="Rectangle 258" width="9.525" height="9.525" transform="translate(859.391 920.552)" fill="#0e3059"/>
+      <rect id="Rectangle_259" data-name="Rectangle 259" width="9.525" height="9.525" transform="translate(926.065 920.552)" fill="#0e3059"/>
+      <path id="Path_213" data-name="Path 213" d="M935.59,930.077v57.149h9.525V930.077Z" fill="#0e3059"/>
+      <path id="Path_214" data-name="Path 214" d="M859.391,968.177v-38.1h-9.525v57.149h9.525v-19.05Z" fill="#0e3059"/>
+      <rect id="Rectangle_260" data-name="Rectangle 260" width="9.525" height="9.525" transform="translate(859.391 987.227)" fill="#0e3059"/>
+      <rect id="Rectangle_261" data-name="Rectangle 261" width="9.525" height="9.525" transform="translate(926.065 987.227)" fill="#0e3059"/>
+      <path id="Path_215" data-name="Path 215" d="M907.016,996.751h-38.1v9.525h57.149v-9.525h-19.05Z" fill="#0e3059"/>
+    </g>
+  </g>
+</svg>
