@@ -4,13 +4,10 @@ import { useState } from 'react';
 
 import { useGame } from '../contexts/GameContext';
 import { useTheme } from '../contexts/ThemeContext';
-
-import IcRoundHelpOutline from './Icons/IcRoundHelpOutline';
-import IcRoundLightMode from './Icons/IcRoundLightMode';
-import IcRoundDarkMode from './Icons/IcRoundDarkMode';
-import IcRoundReplay from './Icons/IcRoundReplay';
+import { useTwitch } from '../contexts/TwitchContext';
 import IconButton from './IconButton';
 import GameRules from './GameRules';
+import TwitchSettings from './TwitchSettings';
 import MenuButton from './layouts/MenuButton';
 import TwitchIcon from './Icons/TwitchIcon';
 import ReplayIcon from './Icons/ReplayIcon';
@@ -23,11 +20,13 @@ const Header: React.FC = () => {
   const { dispatch, game } = useGame();
   const { theme, toggleTheme } = useTheme();
 
-  const [isRulesModalOpen, setIsRulesModalOpen] = useState(false);
+  const { twitch, dispatchTwitch } = useTwitch();
 
-  const toggleIsRulesModal = () => {
-    setIsRulesModalOpen((close) => !close);
-  };
+  /* 
+  Game Rules Modal
+  */
+  const [openRulesModal, setOpenRulesModal] = useState<boolean>(false);
+  const [openTwitchModal, setOpenTwitchModal] = useState<boolean>(false);
 
   return (
     <>
@@ -37,7 +36,7 @@ const Header: React.FC = () => {
           <MenuButton
             tooltipText="Twitch Settings"
             type="button"
-            onClick={() => dispatch({ type: 'NEW_GAME' })}
+            onClick={() => setOpenTwitchModal(true)}
           >
             <TwitchIcon />
           </MenuButton>
@@ -54,7 +53,10 @@ const Header: React.FC = () => {
             {theme === 'dark' ? <DarkIcon /> : <LightIcon />}
           </MenuButton>
 
-          <MenuButton tooltipText="Game Rules" onClick={toggleIsRulesModal}>
+          <MenuButton
+            tooltipText="Game Rules"
+            onClick={() => setOpenRulesModal(true)}
+          >
             <HelpIcon />
           </MenuButton>
         </div>
@@ -62,11 +64,13 @@ const Header: React.FC = () => {
 
       <Modal
         title=""
-        openModal={isRulesModalOpen}
-        setOpenModal={setIsRulesModalOpen}
+        openModal={openRulesModal}
+        setOpenModal={setOpenRulesModal}
       >
         <GameRules />
       </Modal>
+
+      <TwitchSettings open={openTwitchModal} setOpen={setOpenTwitchModal} />
     </>
   );
 };

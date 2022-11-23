@@ -4,7 +4,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable import/prefer-default-export */
 import { useEffect, useState } from 'react';
-import { useTimeout } from '@mantine/hooks';
 import { useGame } from '../contexts/GameContext';
 
 export const HintsModal: React.FC = () => {

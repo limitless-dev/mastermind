@@ -1,10 +1,13 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable no-nested-ternary */
+import { useEffect, useState } from 'react';
+import { useInterval } from '@mantine/hooks';
 import { useGame } from '../contexts/GameContext';
 
 import { type ColorID, MAX_ALLOWED_GUESSES } from '../logic/constants';
 import { MATCH } from '../logic/game';
 import Guesses from './Guesses';
+import DukeTroll from './DukeTroll';
 import Hints from './Hints';
 
 const enum GameStatus {
@@ -17,6 +20,8 @@ const Board: React.VFC = () => {
   const { game, dispatch } = useGame();
 
   const handleGuessClick = (index: number, colorId: ColorID) => {
+    console.log('index', index, 'colorId', colorId);
+
     dispatch({
       type: 'UPDATE_ROW_GUESS',
       payload: { guessIndex: index, guess: colorId },
@@ -82,23 +87,54 @@ const Board: React.VFC = () => {
 
 const GameFinishStatus: React.FC<{ isWin: boolean }> = () => {
   const { game } = useGame();
+  const [animationClass, setAnimationClass] =
+    useState<string>('resultAnimation');
+
+  /* 
+Control the animation & troll animation 
+resultAnimation
+resultAnimationClose
+resultAnimation animationNone
+* */
+  useEffect(() => {
+    if (game.currentColumnIndex === 0) {
+      setAnimationClass('resultAnimation animationNone');
+    }
+
+    if (game.currentColumnIndex > 0 && game.currentTotalHints.WRONG <= 1) {
+      setTimeout(() => {
+        setAnimationClass('resultAnimation');
+      }, 1200);
+      if (!game.finished) {
+        setTimeout(() => {
+          setAnimationClass('resultAnimationClose');
+        }, 6200);
+      }
+    }
+  }, [game.currentColumnIndex, game.finished, game.currentTotalHints.WRONG]);
+
   return (
     <div className="grid grid-cols-1 content-center items-center justify-center gap-10">
       <div
-        className={`grid h-[400px] w-[100px] content-center justify-center ${
+        className={`relative grid h-[400px] w-[118px] content-center justify-center overflow-hidden ${
           game.finished
-            ? 'bg-guess-column-Img bg-contain bg-no-repeat'
-            : 'bg-result-cover-Img bg-cover bg-no-repeat'
+            ? 'bg-result-column-Img bg-cover bg-no-repeat'
+            : 'bg-result-column-Img bg-cover bg-no-repeat'
         }`}
       >
-        {game.finished && (
-          <Guesses
-            isActive={false}
-            guesses={game.answer}
-            onGuessClick={() => console.log('done')}
-          />
-        )}
+        <div className="translate-x-[-7px] translate-y-[-8px]">
+          {game.finished ? (
+            <Guesses
+              isActive={false}
+              guesses={game.answer}
+              onGuessClick={() => console.log('done')}
+            />
+          ) : (
+            <DukeTroll />
+          )}
+        </div>
       </div>
+      <div className={`absolute ${animationClass}`} />
     </div>
   );
 };

@@ -6,7 +6,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-const GameRules: React.VFC = () => {
+const GameRules: React.FC = () => {
   const [categories] = useState({
     Objective: [
       {

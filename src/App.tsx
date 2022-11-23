@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import { TwitchProvider, useTwitch } from './contexts/TwitchContext';
 
 export function App() {
+  const { settings } = useTwitch();
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -14,7 +16,9 @@ export function App() {
 export function WrappedApp() {
   return (
     <BrowserRouter>
-      <App />
+      <TwitchProvider>
+        <App />
+      </TwitchProvider>
     </BrowserRouter>
   );
 }

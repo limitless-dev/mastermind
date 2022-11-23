@@ -11,7 +11,8 @@ module.exports = {
       backgroundImage: {
         'coin-border-Img': "url('../src/assets/coin_border.svg')",
         'guess-column-Img': "url('../src/assets/guessColumn.svg')",
-        'result-cover-Img': "url('../src/assets/resultCover.svg')",
+        'result-column-Img': "url('../src/assets/resultColumn.svg')",
+        'result-cover-Img': "url('../src/assets/sliderAnimation/1.png')",
         'board-Img': "url('../src/assets/board.svg')",
         'channelTag-Img': "url('../src/assets/channelTag.svg')",
         'possibleColors-Img': "url('../src/assets/possibleColors.svg')",
@@ -21,5 +22,5 @@ module.exports = {
 
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

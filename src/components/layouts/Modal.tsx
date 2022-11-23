@@ -6,12 +6,16 @@ interface ModalProps {
   setOpenModal: Dispatch<SetStateAction<boolean>>;
   title: string;
   children: React.ReactNode;
+  actionButton?: React.ReactNode;
+  statusText?: React.ReactNode;
 }
 
 const Modal: React.FC<ModalProps> = ({
   title,
   openModal,
   setOpenModal,
+  actionButton,
+  statusText,
   children,
 }) => {
   const cancelButtonRef = useRef(null);
@@ -69,23 +73,17 @@ const Modal: React.FC<ModalProps> = ({
                   </div>
                 </div>
                 <div className="grid grid-cols-8 gap-4 bg-gray-50 px-4 py-3 dark:bg-gray-900 sm:px-6">
-                  <div className="col-span-2 col-start-1 sm:col-span-2 sm:col-start-1" />
+                  {statusText}
 
                   <div className="col-span-4 col-start-5 sm:col-span-4 sm:col-start-5 sm:flex sm:flex-row-reverse">
+                    {actionButton}
                     <button
                       type="button"
-                      className="mr-2 inline-flex items-center rounded-full border border-transparent bg-indigo-600 px-3.5 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:hover:bg-gray-800 dark:focus:ring-gray-700"
+                      className="mr-2 inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3.5 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:border-gray-700 dark:bg-transparent dark:hover:bg-gray-800 dark:focus:ring-gray-700"
                       onClick={() => setOpenModal(false)}
-                      ref={cancelButtonRef}
                     >
                       Close
                     </button>
-
-                    <button
-                      aria-label="Cancel"
-                      type="button"
-                      ref={cancelButtonRef}
-                    />
                   </div>
                 </div>
               </Dialog.Panel>

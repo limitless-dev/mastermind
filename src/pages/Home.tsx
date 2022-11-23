@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import * as tmi from 'tmi.js';
+// import * as tmi from 'tmi.js';
 import { ThemeProvider } from '../contexts/ThemeContext';
 import { GameProvider, useGame } from '../contexts/GameContext';
+import { useTwitch } from '../contexts/TwitchContext';
 import Header from '../components/Header';
 import Board from '../components/Board';
 import { PlayerName } from '../components/PlayerName';
@@ -9,23 +10,23 @@ import { HintsModal } from '../components/HintsModal';
 
 import './Home.css';
 
-const client = new tmi.Client({
-  options: { debug: true },
+// const client = new tmi.Client({
+//   options: { debug: true },
 
-  channels: ['limitless95x'],
-});
+//   channels: ['limitless95x'],
+// });
 
-client.connect();
+// client.connect();
 
-client.on('message', (channel, tags, message, self) => {
-  // "Alca: Hello, World!"
-  console.log(`${tags['display-name']}: ${message}`);
-});
+// client.on('message', (channel, tags, message, self) => {
+//   // "Alca: Hello, World!"
+//   console.log(`${tags['display-name']}: ${message}`);
+// });
 
 function Home() {
   const { game } = useGame();
   const { t } = useTranslation(['common']);
-
+  const { settings } = useTwitch();
   return (
     <ThemeProvider>
       <GameProvider>
