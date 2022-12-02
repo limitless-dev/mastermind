@@ -30,7 +30,7 @@ const TwitchSettings: React.FC<{
   const validateUserEntries = useCallback(
     (userArr: string[]) => {
       //  mapping for colors and their key numbers
-      const map: { [key: string]: string[] } = {
+      const map: { [key in ColorID]: string[] } = {
         '1': ['red', 'احمر', 'أحمر', 'حمر'],
         '2': ['blue', 'ازرق', 'أزرق', 'زرق'],
         '3': ['green', 'اخضر', 'أخضر', 'خضر'],
@@ -74,11 +74,11 @@ const TwitchSettings: React.FC<{
       const newAnswer: ColorID[] = [];
 
       if (validEntry) {
-        // TODO: function to convert colors into string numbers
+        // function to convert colors into string
+        // numbers of colorID
         userArr.forEach((answerValue) => {
-          Object.keys(map).forEach((value) => {
-            if (map[value].includes(answerValue)) {
-              // @ts-expect-error I already mapped this
+          (Object.keys(map) as Array<keyof typeof map>).forEach((value) => {
+            if (map[value].includes(answerValue.toLocaleLowerCase())) {
               // to 'map' which is an object with 6
               // kays mapped to each color
               newAnswer.push(value);
@@ -100,8 +100,6 @@ const TwitchSettings: React.FC<{
   );
 
   const twitchListeners = useCallback(() => {
-    console.log('count start of function:', twitch.listenerCount);
-
     twitch.on('message', (channel, userstate, message, self) => {
       if (self || !message.startsWith('!')) return;
       const args = message.slice(1).split(' ');
@@ -140,7 +138,6 @@ const TwitchSettings: React.FC<{
         },
       });
     });
-    console.log('count start of function:', twitch.listenerCount);
   }, [
     dispatchMessages,
     dispatchSettings,
@@ -153,8 +150,6 @@ const TwitchSettings: React.FC<{
   ]);
 
   useEffect(() => {
-    console.log('effect');
-
     twitch.removeAllListeners('message');
     twitch.removeAllListeners('disconnected');
     twitchListeners();
@@ -165,40 +160,6 @@ const TwitchSettings: React.FC<{
     twitch,
     twitchListeners,
   ]);
-
-  // const newAnswer = [];
-  // const answer = ['red', 'green', 'blue'];
-
-  // if (
-  //   !answer.some((color) =>
-  //     [
-  //       ...map['1'],
-  //       ...map['2'],
-  //       ...map['3'],
-  //       ...map['4'],
-  //       ...map['5'],
-  //       ...map['6'],
-  //     ].includes(color)
-  //   )
-  // ) {
-  //   console.log('s');
-  // }
-  // TODO: function for checking user entries
-  // function validateUserEntries(userArr: string[], matchArr: string[]) {
-  //   userArr.every((userValue) =>
-  //     matchArr.some((matchValue) => {
-  //       return new RegExp(`\\b${matchValue.toLowerCase()}\\b`).test(userValue.toLowerCase());
-  //     })
-  //   );
-  // }
-  // TODO: function to convert colors into string numbers
-  // answer.forEach((answerValue) => {
-  //   Object.keys(map).forEach((value) => {
-  //     if (map[value].includes(answerValue)) {
-  //       newAnswer.push(value);
-  //     }
-  //   });
-  // });
 
   return (
     <Modal

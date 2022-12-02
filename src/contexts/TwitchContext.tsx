@@ -17,6 +17,8 @@ interface ISettings {
   player1?: string;
   player2?: string;
   connectionStatus: string;
+  bannerTitle?: string;
+  bannerSubTitle?: string;
 }
 
 interface IMessages extends tmi.CommonUserstate {
@@ -59,6 +61,18 @@ type SettingsActionType =
       payload: {
         connectionStatus: string;
       };
+    }
+  | {
+      type: 'UPDATE_BANNER_TITLE';
+      payload: {
+        bannerTitle: string;
+      };
+    }
+  | {
+      type: 'UPDATE_BANNER_SUBTITLE';
+      payload: {
+        bannerSubTitle: string;
+      };
     };
 
 type ActionType =
@@ -99,35 +113,6 @@ export const TwitchProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const [messages, dispatchMessages] = useReducer(messagesReducer, []);
 
-  const twitchListeners = (client: tmi.Client) => {
-    console.log('count start of function:', client.listenerCount);
-
-    client.on('message', (channel, userstate, message, self) => {
-      // console.log('message', message);
-      // console.log('message usertate', userstate);
-      if (self || !message.startsWith('!')) return;
-      const args = message.slice(1).split(' ');
-      const receivedCommand = args.shift()?.toLowerCase();
-
-      if (receivedCommand !== settings.command) return;
-      dispatchMessages({
-        type: 'ADD_MESSAGE',
-        // eslint-disable-next-line object-shorthand
-        payload: { message: { ...userstate, ...{ message: message } } },
-      });
-    });
-
-    client.on('disconnected', (reason) => {
-      dispatchSettings({
-        type: 'UPDATE_CONNECTION_STATUS',
-        payload: {
-          connectionStatus: `Disconnected reason: ${reason}`,
-        },
-      });
-    });
-    console.log('count start of function:', client.listenerCount);
-  };
-
   function twitchReducer(client: tmi.Client, action: ActionType) {
     switch (action.type) {
       case 'CONNECT': {
@@ -156,10 +141,8 @@ export const TwitchProvider: React.FC<{ children: React.ReactNode }> = ({
       }
 
       case 'DISCONNECT': {
-        console.log('Disconnecting...');
         client.removeAllListeners();
         client.getChannels().forEach((channel) => {
-          console.log('existing channel:', channel);
           client.part(channel);
         });
         setTimeout(() => {
@@ -191,8 +174,6 @@ export const TwitchProvider: React.FC<{ children: React.ReactNode }> = ({
   }
 
   async function errorConnectionMessage(error: any) {
-    console.log(twitch);
-
     dispatchSettings({
       type: 'UPDATE_CONNECTION_STATUS',
       payload: {
@@ -272,11 +253,13 @@ function messagesReducer(state: IMessages[], action: MessagesActionType) {
 
 function initSettingsState(): ISettings {
   return {
-    channel: '',
+    channel: 'dukeofarabia',
     command: 'play',
     player1: '',
     player2: '',
     connectionStatus: 'Disconnected',
+    bannerTitle: 'Duke of Arabia',
+    bannerSubTitle: 'Mastermind',
   };
 }
 

@@ -18,6 +18,7 @@ module.exports = {
         'possibleColors-Img': "url('../src/assets/possibleColors.svg')",
         'hintOK-Img': "url('../src/assets/hints/ok.svg')",
         'hintMisplaced-Img': "url('../src/assets/hints/misplaced.svg')",
+        'dukeTroll-Img': "url('../src/assets/troll/duke_dancing.gif')",
       }
 
     },

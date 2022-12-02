@@ -101,7 +101,7 @@ resultAnimation animationNone
       setAnimationClass('resultAnimation animationNone');
     }
 
-    if (game.currentColumnIndex > 0 && game.currentTotalHints.WRONG <= 1) {
+    if (game.currentColumnIndex > 0 && game.currentTotalHints.WRONG === 0) {
       setTimeout(() => {
         setAnimationClass('resultAnimation');
       }, 1200);

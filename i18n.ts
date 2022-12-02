@@ -13,7 +13,7 @@ i18n
     },
     fallbackLng: ['en', 'ar'],
     ns: ['common'],
-    debug: false,
+    debug: true,
     detection: {
       order: [
         'cookie',
