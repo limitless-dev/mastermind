@@ -31,7 +31,6 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="flex h-[60px] flex-wrap items-center justify-end gap-2 border-transparent  bg-transparent pr-4">
-        <h1 className="text-xl font-bold text-white">{game.answer}</h1>
         <div className="flex gap-3">
           <MenuButton
             tooltipText="Twitch Settings"
